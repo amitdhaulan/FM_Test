@@ -18,7 +18,7 @@ public class SeleniumBaseClass {
         driver = new ChromeDriver();*/
 
         
-        driver = new EdgeDriver(options);
+        driver = new EdgeDriver();
         
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(prop.getProperty("url"));
