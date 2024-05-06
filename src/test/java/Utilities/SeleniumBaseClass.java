@@ -14,8 +14,13 @@ public class SeleniumBaseClass {
 
     public WebDriver setUp() throws IOException {
         Properties prop = readPropertiesFile(".\\resources\\Property\\essential.properties");
-        System.setProperty("webdriver.chrome.driver", ".\\resources\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
+        /*System.setProperty("webdriver.chrome.driver", ".\\resources\\drivers\\chromedriver.exe");
+        driver = new ChromeDriver();*/
+
+        EdgeOptions options = new EdgeOptions();
+        options.addArguments("--incognito");
+        driver = new EdgeDriver(options);
+        
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(prop.getProperty("url"));
         driver.manage().window().maximize();
