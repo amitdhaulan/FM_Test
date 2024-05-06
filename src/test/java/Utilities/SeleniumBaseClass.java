@@ -17,8 +17,7 @@ public class SeleniumBaseClass {
         /*System.setProperty("webdriver.chrome.driver", ".\\resources\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();*/
 
-        EdgeOptions options = new EdgeOptions();
-        options.addArguments("--incognito");
+        
         driver = new EdgeDriver(options);
         
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
